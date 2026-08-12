@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شام المتحدة للكيميائيات | SUC For Import & Export</title>
+
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #02529C;    /* الأزرق الملكي الخاص باللوغو */
+            --accent-color: #00AEEF;     /* الأزرق السماوي/التيركواز المضيء من اللوغو */
+            --accent-hover: #0088bc;
+            --bg-color: #f0f5fa;         /* خلفية زرقاء فاتحة جداً متناسقة */
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --shadow: 0 10px 25px -5px rgba(2, 82, 156, 0.08), 0 8px 10px -6px rgba(2, 82, 156, 0.05);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px; /* العرض المثالي لشاشات الموبايل */
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 174, 239, 0.2);
+        }
+
+        /* الهيدر والشعار الجديد */
+        .brand-header {
+            margin-bottom: 25px;
+        }
+
+        .logo-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            box-shadow: 0 8px 20px rgba(2, 82, 156, 0.2);
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.03);
+        }
+
+        .brand-logo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: contain;
+            object-position: center;
+            background-color: #ffffff;
+            display: block;
+            padding: 2px;
+        }
+
+        .company-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+
+        .company-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        .divider {
+            height: 3px;
+            width: 50px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            margin: 18px auto;
+            border-radius: 2px;
+        }
+
+        /* شبكة أزرار التواصل */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            padding: 14px 18px;
+            border-radius: 12px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .contact-card:active, .contact-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+            box-shadow: 0 4px 14px rgba(0, 174, 239, 0.15);
+            background-color: #fff;
+        }
+
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+
+        .card-text {
+            text-align: right;
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .card-title {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+            display: block;
+        }
+
+        .card-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary-color);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            direction: ltr;
+            text-align: right;
+        }
+
+        .arrow-icon {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .contact-card:hover .arrow-icon {
+            color: var(--accent-color);
+        }
+
+        /* ألوان الأيقونات المخصصة والمستوحاة من ألوان اللوغو الجديد */
+        .phone .card-icon { background-color: #e0f2fe; color: #0284c7; }
+        .whatsapp .card-icon { background-color: #dcfce7; color: #16a34a; }
+        .email .card-icon { background-color: #e0f7fa; color: #00838f; }
+        .location .card-icon { background-color: #fee2e2; color: #dc2626; }
+        .facebook .card-icon { background-color: #dbeafe; color: #1d4ed8; }
+        .instagram .card-icon { background-color: #fce7f3; color: #db2777; }
+        .website .card-icon { background-color: #e0f2fe; color: var(--primary-color); }
+
+        /* قسم الباركود / QR */
+        .banner-section {
+            margin-top: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(2, 82, 156, 0.08);
+            background-color: #000000;
+            padding: 14px;
+        }
+
+        .banner-section img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            margin: 0 auto;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* قسم الخريطة التفاعلية القابل للنقر */
+        .map-wrapper {
+            display: block;
+            margin-top: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(2, 82, 156, 0.08);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .map-wrapper:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .map-section {
+            height: 190px;
+            position: relative;
+            width: 100%;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            pointer-events: none;
+        }
+
+        .map-badge {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(2, 82, 156, 0.92);
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .map-badge i {
+            color: var(--accent-color);
+        }
+
+        /* الفوتر */
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .footer span {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- الهيدر واللوجو الجديد -->
+        <div class="brand-header">
+            <div class="logo-container">
+                <img src="src/SUC_logo_transparent.png" alt="شام المتحدة للكيميائيات - SUC" class="brand-logo">
+            </div>
+            <h1 class="company-title">شام المتحدة للكيميائيات</h1>
+            <p class="company-subtitle">SUC For Import & Export - للاستيراد والتصدير والكيميائيات</p>
+            <div class="divider"></div>
+        </div>
+
+        <!-- أزرار التواصل -->
+        <div class="links-container">
+
+            <!-- اتصال هاتف -->
+            <a href="tel:+963939970853" class="contact-card phone">
+                <div class="card-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="card-text">
+                    <span class="card-title">رقم الهاتف / المبيعات</span>
+                    <span class="card-value">+963 939 970 853</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- واتساب -->
+            <a href="https://wa.me/963939970853" target="_blank" class="contact-card whatsapp">
+                <div class="card-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="card-text">
+                    <span class="card-title">مراسلة عبر واتساب</span>
+                    <span class="card-value">+963 939 970 853</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- البريد الإلكتروني -->
+            <a href="mailto:shamunitedchemicals@gmail.com" class="contact-card email">
+                <div class="card-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="card-text">
+                    <span class="card-title">البريد الإلكتروني</span>
+                    <span class="card-value">shamunitedchemicals@gmail.com</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- الموقع التفاعلي -->
+            <a href="https://share.google/5kVJs1P1FVIasFtEL" target="_blank" class="contact-card website">
+                <div class="card-icon">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <div class="card-text">
+                    <span class="card-title">الموقع الإلكتروني الرسمي</span>
+                    <span class="card-value">Home - SUC For Import & Export</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- الموقع على الخريطة -->
+            <a href="https://maps.app.goo.gl/zApQLT5rGNULm3fFA?g_st=iw" target="_blank" class="contact-card location">
+                <div class="card-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="card-text">
+                    <span class="card-title">موقع الشركة (Google Maps)</span>
+                    <span class="card-value" style="direction: rtl;">مقر شركة شام المتحدة للكيميائيات</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- فيسبوك -->
+            <a href="https://www.facebook.com/share/1DXH2iZWUZ/" target="_blank" class="contact-card facebook">
+                <div class="card-icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div class="card-text">
+                    <span class="card-title">صفحة الفيسبوك</span>
+                    <span class="card-value">شام المتحدة للكيميائيات</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- انستغرام -->
+            <a href="https://instagram.com" target="_blank" class="contact-card instagram">
+                <div class="card-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="card-text">
+                    <span class="card-title">حساب الانستغرام</span>
+                    <span class="card-value">@shamunitedchemicals</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+        </div>
+
+        <!-- باركود QR للتواصل السريع -->
+        <div class="banner-section">
+            <img src="src/photo_2026-08-12_16-50-34.jpg" alt="باركود QR - شام المتحدة للكيميائيات SUC">
+        </div>
+
+        <!-- خريطة توضيحية قابلة للنقر مباشرة لنقل المستخدم لرابط Google Maps المحدد -->
+        <a href="https://maps.app.goo.gl/zApQLT5rGNULm3fFA?g_st=iw" target="_blank" class="map-wrapper" title="انقر لفتح الموقع على Google Maps">
+            <div class="map-section">
+                <iframe 
+                    src="https://maps.google.com/maps?q=33.513807,36.223018&z=15&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+                <div class="map-badge">
+                    <i class="fa-solid fa-location-dot"></i>
+                    انقر لفتح الموقع في تطبيق الخرائط
+                </div>
+            </div>
+        </a>
+
+        <!-- الحقوق -->
+        <div class="footer">
+            <p>جميع الحقوق محفوظة © <span>شام المتحدة للكيميائيات (SUC)</span> 2026</p>
+        </div>
+    </div>
+
+</body>
+</html>
